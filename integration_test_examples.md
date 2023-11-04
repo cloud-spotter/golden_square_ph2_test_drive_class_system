@@ -17,8 +17,8 @@ def test_diary_integration_return_all_entries():
     assert diary.all() == [diary_entry_1, diary_entry_2]
 
 """
-2. Given a Diary instance with multiple DiaryEntry instance 
-The Diary calculates and returns the word count across all entries
+2. Given a Diary instance (diary) with multiple DiaryEntry instances, 
+diary calculates and returns the word count across all entries
 """
 def test_diary_integration_entries_word_count():
     diary = Diary()
@@ -29,19 +29,15 @@ def test_diary_integration_entries_word_count():
     assert diary.count_words() == 20
 
 """
-3. Given a reading time
-The Diary instance calculates and returns the estimated reading time
-across all entries (in wpm)
+3. Given a reading time,
+a Diary instance calculates and returns the estimated reading time across all entries (in wpm)
 """
 def test_diary_integration_estimate_entries_reading_time():
     diary = Diary()
-    diary_entry_1 = DiaryEntry("First Entry", "Dear Diary, it's Monday.")
-    diary_entry_2 = DiaryEntry("Monday Motivation", "'It does not matter how slowly you go as long as you do not stop.' Confucius")
-    diary_entry_3 = DiaryEntry("Tuesday Motivation", "'Quality is not an act. It is a habit.' Aristotle")
+    diary.add(DiaryEntry("First Entry", "Dear Diary, it's Monday."))
+    diary.add(DiaryEntry("Monday Motivation", "'It does not matter how slowly you go as long as you do not stop.' Confucius"))
+    diary.add(DiaryEntry("Tuesday Motivation", "'Quality is not an act. It is a habit.' Aristotle"))
     
-    diary.add(diary_entry_1) 
-    diary.add(diary_entry_2)
-    diary.add(diary_entry_3)
     wpm = 10
     expected_reading_time = 3
     assert diary.reading_time(wpm) == expected_reading_time
