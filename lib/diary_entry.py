@@ -22,6 +22,10 @@ class DiaryEntry:
         words = self.contents.split()
         word_limit = wpm * minutes
         words_to_read = min(len(words), word_limit)  # Calculate max no. of words to read without going over contents total or word limit
-        text_chunk = " ".join(words[self._current_index:self._current_index+words_to_read])
+        text_chunk = " ".join(words[self._current_index:self._current_index + words_to_read])
         self._current_index += words_to_read
+
+        if self._current_index >= len(words):
+            self._current_index = 0
+            
         return text_chunk 
