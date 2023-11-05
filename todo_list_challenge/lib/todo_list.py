@@ -16,3 +16,7 @@ class TodoList:
             if todo.complete == False:
                 incomplete.append(todo)
         return incomplete
+
+    def complete(self) -> List[Todo]:
+        '''Returns a list of Todo instances representing the todos that are complete'''
+        return [todo for todo in self.todos if todo.complete]
