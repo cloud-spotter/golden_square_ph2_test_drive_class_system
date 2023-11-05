@@ -43,14 +43,14 @@ def test_diary_integration_estimate_entries_reading_time():
 4. Given a Diary instance with multiple diary entries
 Diary finds the best entry to read for a given time frame
 """
-# def test_diary_integration_find_best_entry_for_time():
-#     diary = Diary()
-#     diary_entry_1 = DiaryEntry("First Entry", "Dear Diary, it's Monday.")
-#     diary_entry_2 = DiaryEntry("Monday Motivation", "'It does not matter how slowly you go as long as you do not stop.' Confucius")
-#     diary.add(diary_entry_1) 
-#     diary.add(diary_entry_2)
+def test_diary_integration_find_best_entry_for_time():
+    diary = Diary()
+    diary_entry_1 = DiaryEntry("First Entry", "Dear Diary, it's Monday.")
+    diary_entry_2 = DiaryEntry("Monday Motivation", "'It does not matter how slowly you go as long as you do not stop.' Confucius")
+    diary.add(diary_entry_1) 
+    diary.add(diary_entry_2)
 
-#     minutes = 1
-#     wpm = 10
-#     best_entry = diary.find_best_entry_for_reading_time(wpm, minutes)
-#     assert best_entry == diary_entry_1
+    minutes = 1
+    wpm = 10
+    best_entry = diary.find_best_entry_for_reading_time(wpm, minutes)
+    assert best_entry == diary_entry_1
