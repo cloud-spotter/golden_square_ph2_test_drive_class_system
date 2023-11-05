@@ -5,6 +5,10 @@ class DiaryEntry:
         self.contents = contents
         self._current_index = 0
     
+    def __str__(self):
+    '''Returns a human-readable string representation of the DiaryEntry'''
+    return f"Title: {self.title}\nContents: {self.contents}"
+    
     def count_words(self) -> int:
         '''Returns an integer representing the number of words in the contents''' 
         words = self.contents.split()
@@ -27,5 +31,5 @@ class DiaryEntry:
 
         if self._current_index >= len(words):
             self._current_index = 0
-            
+
         return text_chunk 
